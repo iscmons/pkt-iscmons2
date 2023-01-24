@@ -6,6 +6,7 @@ namespace iscmons {
 	
 	let TMP36_voltage = 0;
 	let TMP36_temp = 0;
+	let a = 0;
 		
 	/**
      	* read temperature
@@ -14,11 +15,11 @@ namespace iscmons {
     	//% weight=80 blockGap=8
     	//% parts=tmp36 trackArgs=0
 	export function TMP36_read_celsius(): number {
-		TMP36_voltage = pins.P0.analogRead();
-		TMP36_temp = 50*TMP_voltage + 20;
-		pins.LED.digitalWrite(true);
-    		control.waitMicros(4000);
-    		pins.LED.digitalWrite(false);
+		//TMP36_voltage = pins.P0.analogRead();
+		//TMP36_temp = 50*TMP_voltage + 20;
+		//pins.LED.digitalWrite(true);
+    		//control.waitMicros(4000);
+    		//pins.LED.digitalWrite(false);
     		return a;
 	}
 }

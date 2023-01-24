@@ -11,7 +11,7 @@ namespace iscmons {
 	/**
      	* read temperature
      	*/
-    	//% blockId="ISCMONS_TMP36" block="TMP36 read in °C"
+    	//% blockId="ISCMONS_TMP36" block="TMP36 read in C"
     	//% weight=80 blockGap=8
     	//% parts=tmp36 trackArgs=0
 	export function TMP36_read_celsius(): number {

@@ -16,9 +16,9 @@ namespace iscmons {
 	export function TMP36_read_celsius(): number {
 		TMP36_voltage = pins.P0.analogRead();
 		TMP36_temp = 50*TMP_voltage + 20;
-		pins.LED.digitalWrite(true)
-    		control.waitMicros(4000)
-    		pins.LED.digitalWrite(false)
+		pins.LED.digitalWrite(true);
+    		control.waitMicros(4000);
+    		pins.LED.digitalWrite(false);
     		return a;
 	}
 }

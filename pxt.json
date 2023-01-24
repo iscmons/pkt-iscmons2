@@ -1,6 +1,6 @@
 {
-    "name": "Untitled",
-    "description": "",
+    "name": "iscmons",
+    "description": "iscmons forever",
     "dependencies": {
         "rpi-pico": "*"
     },

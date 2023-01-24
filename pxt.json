@@ -1,6 +1,6 @@
 {
     "name": "pkt-iscmons2",
-    "description": "",
+    "description": "coucou description",
     "dependencies": {
         "rpi-pico": "*",
         "jacdac": "github:microsoft/pxt-jacdac#v1.8.38"

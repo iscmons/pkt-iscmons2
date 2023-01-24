@@ -3,7 +3,8 @@
     "description": "coucou description",
     "dependencies": {
         "rpi-pico": "*",
-        "jacdac": "github:microsoft/pxt-jacdac#v1.8.38"
+        "jacdac": "github:microsoft/pxt-jacdac#v1.8.38",
+        "light": "*"
     },
     "files": [
         "main.blocks",

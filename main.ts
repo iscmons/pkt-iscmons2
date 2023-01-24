@@ -49,10 +49,10 @@ namespace iscmons {
     * HCSR04
     */
 
-    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in mm"
+    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in cm"
     //% weight=80 blockGap=8
     //% parts=HCSR04 trackArgs=0
-    export function HCSR04(pin: number): number {
+    export function HCSR04_measure(): number {
         pins.P0.digitalWrite(false);
         control.waitMicros(5);
         pins.P0.digitalWrite(true);
@@ -60,8 +60,17 @@ namespace iscmons {
         pins.P0.digitalWrite(false);
         control.waitForEvent(0, 0);
         let data = pins.P1.pulseIn(PulseValue.High);
-        return data*100//582;
+        return (data*2)/29.1;
     }
+
+    /**
+    * Servo moteur
+    */
+
+     //% blockId="ISCMONS_SERVO" block="Motor turn in "
+    //% weight=80 blockGap=8
+    //% parts=HCSR04 trackArgs=0
+
     
 
     

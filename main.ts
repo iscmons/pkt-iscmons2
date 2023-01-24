@@ -28,7 +28,7 @@ namespace iscmons {
         return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
     }
 
-    //% blockId="ISCMONS_BMP180" block="BMP reads T in C"
+    //% blockId="ISCMONS_BMP180T" block="BMP reads T in C"
     //% weight=80 blockGap=8
     //% parts=BMP180 trackArgs=0
     export function BMP180_read_temperature(adr_i2c: number): number {
@@ -37,7 +37,7 @@ namespace iscmons {
         return BMP180_data_temperature;
     }
 
-    //% blockId="ISCMONS_BMP180" block="BMP reads p in Pa"
+    //% blockId="ISCMONS_BMP180P" block="BMP reads p in Pa"
     //% weight=80 blockGap=8
     //% parts=BMP180 trackArgs=0
     export function BMP180_read_pressure(adr_i2c: number): number {
@@ -49,7 +49,7 @@ namespace iscmons {
     * HCSR04
     */
 
-    //% blockId="ISCMONS_BMP180" block="HCSR04 reads distance in mm"
+    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in mm"
     //% weight=80 blockGap=8
     //% parts=HCSR04 trackArgs=0
     export function HCSR04(pin: number): number {

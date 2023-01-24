@@ -19,7 +19,8 @@ namespace iscmons {
 		TMP36_temp = 50*TMP36_voltage + 20;
 		pins.LED.digitalWrite(true);
     	control.waitMicros(4000);
-    	pins.LED.digitalWrite(false);
+        pins.LED.digitalWrite(false);
+        control.waitMicros(4000);
     	//return a;
 	}
 }

@@ -9,17 +9,17 @@ namespace iscmons {
 	let a = 0;
 		
 	/**
-     	* read temperature
-     	*/
-    	//% blockId="ISCMONS_TMP36" block="TMP36 read in C"
-    	//% weight=80 blockGap=8
-    	//% parts=tmp36 trackArgs=0
+    * read temperature
+    */
+    //% blockId="ISCMONS_TMP36" block="TMP36 read in C"
+    //% weight=80 blockGap=8
+    //% parts=tmp36 trackArgs=0
 	export function TMP36_read_celsius(): number {
-		//TMP36_voltage = pins.P0.analogRead();
-		//TMP36_temp = 50*TMP_voltage + 20;
-		//pins.LED.digitalWrite(true);
-    		//control.waitMicros(4000);
-    		//pins.LED.digitalWrite(false);
-    		return a;
+		TMP36_voltage = pins.P0.analogRead();
+		TMP36_temp = 50*TMP36_voltage + 20;
+		pins.LED.digitalWrite(true);
+    	control.waitMicros(4000);
+    	pins.LED.digitalWrite(false);
+    	return a;
 	}
 }

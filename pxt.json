@@ -1,15 +1,21 @@
 {
     "name": "pkt-iscmons2",
-    "version": "0.0.1",
-    "description": "coucou description",
     "dependencies": {
-        "rpi-pico": "*",
+        "core": "*",
+        "rpi-pico": "*"
     },
     "files": [
-        "main.blocks",
-        "main.ts",
+        ".vscode/settings.json",
         "README.md",
-        "pxtparts.json"
+        "main.ts",
+        "test.ts"
     ],
-    "public": true
+    "targetVersions": {
+        "target": "0.15.66",
+        "targetId": "maker"
+    },
+    "supportedTargets": [
+        "maker"
+    ],
+    "preferredEditor": "tsprj"
 }

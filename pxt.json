@@ -1,8 +1,9 @@
 {
-    "name": "Untitled",
+    "name": "pkt-iscmons2",
     "description": "",
     "dependencies": {
-        "rpi-pico": "*"
+        "rpi-pico": "*",
+        "jacdac": "github:microsoft/pxt-jacdac#v1.8.38"
     },
     "files": [
         "main.blocks",

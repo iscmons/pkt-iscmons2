@@ -4,20 +4,21 @@
 //% weight=100 color=#70c0f0 icon="\uf042" block="ISCMONS"
 namespace iscmons {
 	
-	let a = 0;
-	
-	function get(): void{
-		a = 1;
-	}
-	
+	let TMP36_voltage = 0;
+	let TMP36_temp = 0;
+		
 	/**
-     	* get pressure
+     	* read temperature
      	*/
-    	//% blockId="ISCMONS_TMP36" block="tmp36"
+    	//% blockId="ISCMONS_TMP36" block="TMP36 read in °C"
     	//% weight=80 blockGap=8
     	//% parts=tmp36 trackArgs=0
-	export function doSomething(): number {
-		get();
+	export function TMP36_read_celsius(): number {
+		TMP36_voltage = pins.P0.analogRead();
+		TMP36_temp = 50*TMP_voltage + 20;
+		pins.LED.digitalWrite(true)
+    		control.waitMicros(4000)
+    		pins.LED.digitalWrite(false)
     		return a;
 	}
 }

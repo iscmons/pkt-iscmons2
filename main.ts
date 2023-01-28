@@ -14,10 +14,10 @@ namespace iscmons {
 		let TMP36_voltage = pins.P0.analogRead();
 		let TMP36_temp = 50*TMP36_voltage + 20;
         console.log("coucou \n")
-        pins.LED.digitalWrite(true);
+        //pins.LED.digitalWrite(true);
         control.waitMicros(1000000);
         console.log("coucou2 \n");
-        pins.LED.digitalWrite(false);
+        //pins.LED.digitalWrite(false);
         control.waitMicros(1000000);
     	//return a;
 	}

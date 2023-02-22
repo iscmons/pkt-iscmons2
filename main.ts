@@ -3,8 +3,6 @@
  */
 //% weight=100 color=#70c0f0 icon="\uf042" block="ISCMONS"
 namespace iscmons {
-
- 
 		
 	/**
     * TMP36
@@ -110,7 +108,12 @@ namespace iscmons {
     * Data logger
     */
 
-
+    //% blockId="ISCMONS_File" block="writes %text in %filename"
+    //% weight=80 blockGap=8
+    //% parts=SH1106 trackArgs=0
+    export function write_filename(filename: string, text: string): void {
+        storage.appendLine(filename, text);
+    }
     
 
 

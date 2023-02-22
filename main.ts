@@ -3,15 +3,6 @@
  */
 //% weight=100 color=#70c0f0 icon="\uf042" block="ISCMONS"
 namespace iscmons {
-
-    export class FileStorage extends Storage {
-        filename: string;
-        constructor(filename: string) {
-            super()
-            this.filename = filename;
-        }
-
-    }
 		
 	/**
     * TMP36

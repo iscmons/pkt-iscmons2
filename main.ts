@@ -69,14 +69,12 @@ namespace iscmons {
     * BUZZER 
     */
 
-    //% blockId="ISCMONS_BUZZER" block="Buzzer turn on/off %bool"
+    //% blockId="ISCMONS_BUZZER" block="Buzzer turns %bool on %pin"
     //% weight=80 blockGap=8
     //% parts=BUZZER trackArgs=0
-    export function Buzzer(bool: boolean): void {
-        pins.P1.digitalWrite(true);
-        control.waitMicros(1000000);
-        pins.P1.digitalWrite(false);
-        control.waitMicros(1000000);
+    export function Buzzer(pin: DigitalInOutPin, bool: boolean): void {
+        //pins.P1.digitalWrite(bool);
+        pin.digitalWrite(bool);
         return;
     }
 

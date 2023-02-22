@@ -7,11 +7,11 @@ namespace iscmons {
 	/**
     * TMP36
     */
-    //% blockId="ISCMONS_TMP36" block="TMP36 read T in C"
+    //% blockId="ISCMONS_TMP36" block="TMP36 read T in C on %pin"
     //% weight=80 blockGap=8
     //% parts=TMP36 trackArgs=0
-	export function TMP36_read_celsius(): void {
-		let TMP36_voltage = pins.P0.analogRead();
+    export function TMP36_read_celsius(pin:AnalogInPin): void {
+		let TMP36_voltage = pin.analogRead();
 		let TMP36_temp = 50*TMP36_voltage + 20;
         console.log("coucou \n")
         //pins.LED.digitalWrite(true);
@@ -51,22 +51,22 @@ namespace iscmons {
     * HCSR04
     */
 
-    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in cm"
+    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in cm on %echo with trigger on %trig"
     //% weight=80 blockGap=8
     //% parts=HCSR04 trackArgs=0
-    export function HCSR04_measure(): number {
-        pins.P0.digitalWrite(false);
+    export function HCSR04_measure(echo: DigitalInOutPin, trig: DigitalInOutPin): number {
+        trig.digitalWrite(false);
         control.waitMicros(5);
-        pins.P0.digitalWrite(true);
+        trig.digitalWrite(true);
         control.waitMicros(10);
-        pins.P0.digitalWrite(false);
+        trig.digitalWrite(false);
         control.waitForEvent(0, 0);
-        let data = pins.P1.pulseIn(PulseValue.High);
+        let data = echo.pulseIn(PulseValue.High);
         return (data*2)/29.1;
     }
 
     /**
-    * BUZZER 
+    * BUZZER (checked)
     */
 
     //% blockId="ISCMONS_BUZZER" block="Buzzer turns %bool on %pin"
@@ -77,6 +77,36 @@ namespace iscmons {
         pin.digitalWrite(bool);
         return;
     }
+
+    /**
+    * SH1106 screen
+    */
+
+     //% blockId="ISCMONS_SH1106" block="SH1106 displays"
+    //% weight=80 blockGap=8
+    //% parts=SH1106 trackArgs=0
+    export function SH1106_display(): void {
+
+        return;
+    }
+
+    //% blockId="ISCMONS_SH1106" block="SH1106 changes contrast"
+    //% weight=80 blockGap=8
+    //% parts=SH1106 trackArgs=0
+    export function SH1106_setcontrast(): void {
+        return;
+    }
+
+    //% blockId="ISCMONS_SH1106" block="SH1106 sets text"
+    //% weight=80 blockGap=8
+    //% parts=SH1106 trackArgs=0
+    export function SH1106_settext(): void {
+        return;
+    }
+
+
+    
+
 
     /**
     * Servo moteur

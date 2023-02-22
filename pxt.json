@@ -8,7 +8,8 @@
         ".vscode/settings.json",
         "README.md",
         "main.ts",
-        "test.ts"
+        "test.ts",
+        "main.py"
     ],
     "targetVersions": {
         "target": "0.15.66",

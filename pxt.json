@@ -2,7 +2,8 @@
     "name": "pkt-iscmons2",
     "dependencies": {
         "core": "*",
-        "rpi-pico": "*"
+        "rpi-pico": "*",
+        "storage": "file:../storage"
     },
     "files": [
         ".vscode/settings.json",

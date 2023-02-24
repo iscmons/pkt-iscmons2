@@ -7,7 +7,8 @@ namespace iscmons {
 	/**
     * TMP36
     */
-    //% blockId="ISCMONS_TMP36" block="TMP36 read T in C on %pin"
+
+    //% blockId="ISCMONS_TMP36" block="reads T in C on %pin with TMP36"
     //% weight=80 blockGap=8
     //% parts=TMP36 trackArgs=0
     export function TMP36_read_celsius(pin:AnalogInPin): void {
@@ -30,20 +31,20 @@ namespace iscmons {
         return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
     }
 
-    //% blockId="ISCMONS_BMP180T" block="BMP reads T in C"
+    //% blockId="ISCMONS_BMP180T" block="reads T in C with BMP180 on I2C %id"
     //% weight=80 blockGap=8
     //% parts=BMP180 trackArgs=0
-    export function BMP180_read_temperature(adr_i2c: number): number {
-        let BMP180_data_temperature = (getreg(adr_i2c, 0xFA) << 12) + (getreg(adr_i2c, 0xFB) << 4) + (getreg(adr_i2c,0xFC) >> 4)
+    export function BMP180_read_temperature(id: number): number {
+        let BMP180_data_temperature = (getreg(id, 0xFA) << 12) + (getreg(id, 0xFB) << 4) + (getreg(id,0xFC) >> 4)
         BMP180_data_temperature = ((BMP180_data_temperature * 5 + 128) >> 8) / 100.
         return BMP180_data_temperature;
     }
 
-    //% blockId="ISCMONS_BMP180P" block="BMP reads p in Pa"
+    //% blockId="ISCMONS_BMP180P" block="reads p in Pa with BMP180 on I2C %id"
     //% weight=80 blockGap=8
     //% parts=BMP180 trackArgs=0
-    export function BMP180_read_pressure(adr_i2c: number): number {
-        let BMP180_data_pressure = (getreg(adr_i2c, 0xF7) << 12) + (getreg(adr_i2c, 0xF8) << 4) + (getreg(adr_i2c,0xF9) >> 4)
+    export function BMP180_read_pressure(id: number): number {
+        let BMP180_data_pressure = (getreg(id, 0xF7) << 12) + (getreg(id, 0xF8) << 4) + (getreg(id,0xF9) >> 4)
         return BMP180_data_pressure;
     }
 
@@ -51,7 +52,7 @@ namespace iscmons {
     * HCSR04
     */
 
-    //% blockId="ISCMONS_HCSR04" block="HCSR04 reads distance in cm on %echo with trigger on %trig"
+    //% blockId="ISCMONS_HCSR04" block="reads distance in cm with HCSR04 with echo on %echo with trigger on %trig"
     //% weight=80 blockGap=8
     //% parts=HCSR04 trackArgs=0
     export function HCSR04_measure(echo: DigitalInOutPin, trig: DigitalInOutPin): number {
@@ -69,7 +70,7 @@ namespace iscmons {
     * BUZZER (checked)
     */
 
-    //% blockId="ISCMONS_BUZZER" block="Buzzer turns %bool on %pin"
+    //% blockId="ISCMONS_BUZZER" block="turns %bool buzzer on %pin"
     //% weight=80 blockGap=8
     //% parts=BUZZER trackArgs=0
     export function Buzzer(pin: DigitalInOutPin, bool: boolean): void {
@@ -82,7 +83,7 @@ namespace iscmons {
     * SH1106 screen
     */
 
-     //% blockId="ISCMONS_SH1106" block="SH1106 displays"
+    //% blockId="ISCMONS_SH1106" block="SH1106 displays"
     //% weight=80 blockGap=8
     //% parts=SH1106 trackArgs=0
     export function SH1106_display(): void {
@@ -115,19 +116,20 @@ namespace iscmons {
         storage.appendLine(filename, text);
     }
     
-
-
     /**
     * Servo moteur
     */
 
-     //% blockId="ISCMONS_SERVO" block="Motor turn in "
+    //% blockId="ISCMONS_Servo" block="turns on the servo on %pin with %rate percent during %microsecond"
     //% weight=80 blockGap=8
-    //% parts=HCSR04 trackArgs=0
-
-    
-
-    
-
+    //% parts=SH1106 trackArgs=0
+    export function servo_turn(pin: DigitalInOutPin, rate: number, millisecond: number): void {
+        for (let i = 0; i < millisecond*10; i++) {
+            pin.digitalWrite(true);
+            control.waitMicros(rate);
+            pin.digitalWrite(false);
+            control.waitMicros(100-rate);
+        }  
+    }   
 
 }

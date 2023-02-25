@@ -8,6 +8,7 @@
     "files": [
         ".vscode/settings.json",
         "sim.json",
+        "figure.svg",
         "README.md",
         "main.ts",
         "test.ts",

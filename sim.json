@@ -1,7 +1,7 @@
 {
   "driveDisplayName": "ISCMONS",
   "visual": {    
-    "image": "figure.svg",
+    "image": "pkg://figure.svg",
     "useCrocClips": false,
     "width": 28.3,
     "height": 11.4,

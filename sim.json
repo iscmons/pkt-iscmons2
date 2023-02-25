@@ -1,6 +1,10 @@
 {
   "driveDisplayName": "ISCMONS",
-  "visual": {
+  "visual": {    
+    "image": "figure.svg",
+    "useCrocClips": false,
+    "width": 28.3,
+    "height": 11.4,
     "leds1": [
       {
         "x": 52.0207047046369,

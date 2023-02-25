@@ -7,6 +7,7 @@
     },
     "files": [
         ".vscode/settings.json",
+        "sim.json",
         "README.md",
         "main.ts",
         "test.ts",

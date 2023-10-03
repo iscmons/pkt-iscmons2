@@ -88,7 +88,7 @@ namespace iscmons {
     * SH1106 screen
     */
 
-    //% blockId="ISCMONS_SH1106" block="SH1106 displays"
+    //% blockId="ISCMONS_SH1106a" block="SH1106 displays"
     //% weight=80 blockGap=8
     //% parts=SH1106 trackArgs=0
     //% group="Screen"  
@@ -97,7 +97,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_SH1106" block="SH1106 changes contrast"
+    //% blockId="ISCMONS_SH1106b" block="SH1106 changes contrast"
     //% weight=80 blockGap=8
     //% parts=SH1106 trackArgs=0
     //% group="Screen"  
@@ -105,7 +105,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_SH1106" block="SH1106 sets text"
+    //% blockId="ISCMONS_SH1106"c block="SH1106 sets text"
     //% weight=80 blockGap=8
     //% parts=SH1106 trackArgs=0
     //% group="Screen"  

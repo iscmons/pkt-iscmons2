@@ -79,8 +79,8 @@ namespace iscmons {
     //% parts=BUZZER trackArgs=0
     //% group="BUZZER"  
     export function Buzzer(pin: DigitalInOutPin, bool: boolean): void {
-        pins.P1.digitalWrite(bool);
-        //pin.digitalWrite(bool);
+        //pins.P1.digitalWrite(bool);
+        pin.digitalWrite(bool);
         return;
     }
 

@@ -140,6 +140,32 @@ namespace iscmons {
             pin.digitalWrite(false);
             control.waitMicros(100-rate);
         }  
-    }   
+    }  
+
+    /**
+    * brushless moteur
+    */
+
+    //% blockId="ISCMONS_motor" block="turns %bool motor on %pin"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="motor"  
+    export function motor_turn(pin: DigitalInOutPin, bool: boolean): void {
+        pin.digitalWrite(bool);
+        return;
+    }
+
+
+    /**
+    * button
+    */
+
+    //% blockId="ISCMONS_button" block="button on %pin is pressed"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="button"  
+    export function button_is_pressed(pin: DigitalInOutPin): boolean {
+        return pin.digitalRead();
+    }
 
 }

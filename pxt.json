@@ -3,7 +3,8 @@
     "dependencies": {
         "core": "*",
         "rpi-pico": "*",
-        "storage": "*"
+        "storage": "*",
+        "buttons": "*"
     },
     "files": [
         ".vscode/settings.json",

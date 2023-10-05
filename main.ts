@@ -154,6 +154,48 @@ namespace iscmons {
         pin.digitalWrite(bool);
         return;
     }
+    
+    /**
+     * Motor pasàpas
+     */
+
+    //% blockId="ISCMONS_motorpasapas" block="motor is turn on"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="button"  
+    export function motor_is_turn_on(pin: DigitalInOutPin): void {
+
+        pins.P1.digitalWrite(true);
+        pins.P2.digitalWrite(true);
+        pins.P3.digitalWrite(false);
+        pins.P4.digitalWrite(false);
+
+        control.waitMicros(10000);
+
+        pins.P1.digitalWrite(false);
+        pins.P2.digitalWrite(true);
+        pins.P3.digitalWrite(true);
+        pins.P4.digitalWrite(false);
+
+        control.waitMicros(10000);
+
+        pins.P1.digitalWrite(false);
+        pins.P2.digitalWrite(false);
+        pins.P3.digitalWrite(true);
+        pins.P4.digitalWrite(true);
+
+        control.waitMicros(10000);
+
+        pins.P1.digitalWrite(true);
+        pins.P2.digitalWrite(false);
+        pins.P3.digitalWrite(false);
+        pins.P4.digitalWrite(true);
+
+        control.waitMicros(10000);
+
+        return;
+    }
+
 
 
     /**
@@ -168,46 +210,5 @@ namespace iscmons {
         return pin.digitalRead();
     }
 
-
-    /**
-    * Motor pasàpas
-    */
-
-    //% blockId="ISCMONS_motorpasapas" block="motor is turn on"
-    //% weight=80 blockGap=8
-    //% parts=Motor trackArgs=0
-    //% group="button"  
-    export function motor_is_turn_on(pin: DigitalInOutPin): void {
-        
-        pins.P1.digitalWrite(true);
-        pins.P2.digitalWrite(true);
-        pins.P3.digitalWrite(false);
-        pins.P4.digitalWrite(false);
-
-        control.waitMicros(10000);
-
-        pins.P1.digitalWrite(false);
-        pins.P2.digitalWrite(true);
-        pins.P3.digitalWrite(true);
-        pins.P4.digitalWrite(false);
-
-        control.waitMicros(10000);
-
-        pins.P1.digitalWrite(false);
-        pins.P2.digitalWrite(false);
-        pins.P3.digitalWrite(true);
-        pins.P4.digitalWrite(true);
-
-        control.waitMicros(10000);
-
-        pins.P1.digitalWrite(true);
-        pins.P2.digitalWrite(false);
-        pins.P3.digitalWrite(false);
-        pins.P4.digitalWrite(true);
-
-        control.waitMicros(10000);
-        
-        return;
-    }
-
+ 
 }

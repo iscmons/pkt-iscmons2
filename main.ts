@@ -154,9 +154,43 @@ namespace iscmons {
         pin.digitalWrite(bool);
         return;
     }
+
+    /**
+    * lego moteur
+    */
+
+    //% blockId="ISCMONS_motor" block="turn forward motor on %pin1 and %pin2"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="motor"  
+    export function motor_forward(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
+        pin1.digitalWrite(true);
+        pin2.digitalWrite(false);
+        return;
+    }
+
+    //% blockId="ISCMONS_motor" block="turn backward motor %bool motor on %pin1 and %pin2"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="motor" 
+    export function motor_backward(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
+        pin1.digitalWrite(false);
+        pin2.digitalWrite(true);
+        return;
+    }
+
+    //% blockId="ISCMONS_motor" block="stop motor %bool motor on %pin1 and %pin2"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="motor" 
+    export function motor_stop(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
+        pin1.digitalWrite(false);
+        pin2.digitalWrite(false);
+        return;
+    }
     
     /**
-     * Motor pasàpas
+     * Motor pasàpas (checked)
      */
 
     //% blockId="ISCMONS_motorpasapas" block="motor is turn on"

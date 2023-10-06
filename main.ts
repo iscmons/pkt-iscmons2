@@ -221,7 +221,7 @@ namespace iscmons {
     * Button
     */
 
-    //% blockId="ISCMONS_button" block="button on %pin is pressed"
+    //% blockId="ISCMONS_button1" block="button on %pin is pressed"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Button"  
@@ -229,13 +229,28 @@ namespace iscmons {
         return pin.digitalRead();
     }
 
-    //% blockId="ISCMONS_button" block="button on %pin is not pressed"
+    //% blockId="ISCMONS_button2" block="button on %pin is not pressed"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Button"  
     export function button_is_not_pressed(pin: DigitalInOutPin): boolean {
         return !pin.digitalRead();
     }
+
+    /**
+    * Magnet
+    */
+
+    //% blockId="ISCMONS_magnet" block="turn on the magnet %bool on pin %pin"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="Magnet"  
+    export function magnet_turn(pin: DigitalInOutPin, bool: boolean): void {
+        pin.digitalWrite(bool);
+        return;
+    }
+
+
 
  
 }

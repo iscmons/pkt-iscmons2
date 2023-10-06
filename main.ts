@@ -146,7 +146,7 @@ namespace iscmons {
     * lego moteur
     */
 
-    //% blockId="ISCMONS_motor" block="turn forward motor on %pin1 and %pin2"
+    //% blockId="ISCMONS_motor1" block="turn forward motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Lego Motor"
@@ -156,7 +156,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_motor" block="turn backward motor on %pin1 and %pin2"
+    //% blockId="ISCMONS_motor2" block="turn backward motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Lego Motor"
@@ -166,7 +166,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_motor" block="stop motor on %pin1 and %pin2"
+    //% blockId="ISCMONS_motor3" block="stop motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Lego Motor"

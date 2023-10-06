@@ -169,7 +169,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_motor" block="turn backward motor %bool motor on %pin1 and %pin2"
+    //% blockId="ISCMONS_motor" block="turn backward motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Lego Motor"
@@ -179,7 +179,7 @@ namespace iscmons {
         return;
     }
 
-    //% blockId="ISCMONS_motor" block="stop motor %bool motor on %pin1 and %pin2"
+    //% blockId="ISCMONS_motor" block="stop motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Lego Motor"

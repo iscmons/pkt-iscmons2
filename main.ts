@@ -143,19 +143,6 @@ namespace iscmons {
     }  
 
     /**
-    * brushless moteur
-    */
-
-    //% blockId="ISCMONS_motor" block="turns %bool motor on %pin"
-    //% weight=80 blockGap=8
-    //% parts=Motor trackArgs=0
-    //% group="motor"  
-    export function motor_turn(pin: DigitalInOutPin, bool: boolean): void {
-        pin.digitalWrite(bool);
-        return;
-    }
-
-    /**
     * lego moteur
     */
 
@@ -237,7 +224,7 @@ namespace iscmons {
     //% blockId="ISCMONS_button" block="button on %pin is pressed"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
-    //% group="button"  
+    //% group="Button"  
     export function button_is_pressed(pin: DigitalInOutPin): boolean {
         return pin.digitalRead();
     }

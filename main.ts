@@ -162,7 +162,7 @@ namespace iscmons {
     //% blockId="ISCMONS_motor" block="turn forward motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
-    //% group="motor"  
+    //% group="Lego Motor"
     export function motor_forward(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
         pin1.digitalWrite(true);
         pin2.digitalWrite(false);
@@ -172,7 +172,7 @@ namespace iscmons {
     //% blockId="ISCMONS_motor" block="turn backward motor %bool motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
-    //% group="motor" 
+    //% group="Lego Motor"
     export function motor_backward(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
         pin1.digitalWrite(false);
         pin2.digitalWrite(true);
@@ -182,7 +182,7 @@ namespace iscmons {
     //% blockId="ISCMONS_motor" block="stop motor %bool motor on %pin1 and %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
-    //% group="motor" 
+    //% group="Lego Motor"
     export function motor_stop(pin1: DigitalInOutPin, pin2: DigitalInOutPin): void {
         pin1.digitalWrite(false);
         pin2.digitalWrite(false);
@@ -196,7 +196,7 @@ namespace iscmons {
     //% blockId="ISCMONS_motorpasapas" block="motor is turn on"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
-    //% group="button"  
+    //% group="Brushless motor"  
     export function motor_is_turn_on(pin: DigitalInOutPin): void {
 
         pins.P1.digitalWrite(true);
@@ -229,8 +229,6 @@ namespace iscmons {
 
         return;
     }
-
-
 
     /**
     * button

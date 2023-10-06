@@ -180,37 +180,37 @@ namespace iscmons {
      * Motor pasàpas (checked)
      */
 
-    //% blockId="ISCMONS_motorpasapas" block="motor is turn on"
+    //% blockId="ISCMONS_motorpasapas" block="turn on motor on %pin1 , %pin2 , %pin3 , %pin4"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="Brushless motor"  
-    export function motor_is_turn_on(pin: DigitalInOutPin): void {
+    export function motor_is_turn_on(pin1: DigitalInOutPin, pin2: DigitalInOutPin, pin3: DigitalInOutPin, pin4: DigitalInOutPin): void {
 
-        pins.P1.digitalWrite(true);
-        pins.P2.digitalWrite(true);
-        pins.P3.digitalWrite(false);
-        pins.P4.digitalWrite(false);
-
-        control.waitMicros(10000);
-
-        pins.P1.digitalWrite(false);
-        pins.P2.digitalWrite(true);
-        pins.P3.digitalWrite(true);
-        pins.P4.digitalWrite(false);
+        pin1.digitalWrite(true);
+        pin2.digitalWrite(true);
+        pin3.digitalWrite(false);
+        pin4.digitalWrite(false);
 
         control.waitMicros(10000);
 
-        pins.P1.digitalWrite(false);
-        pins.P2.digitalWrite(false);
-        pins.P3.digitalWrite(true);
-        pins.P4.digitalWrite(true);
+        pin1.digitalWrite(false);
+        pin2.digitalWrite(true);
+        pin3.digitalWrite(true);
+        pin4.digitalWrite(false);
 
         control.waitMicros(10000);
 
-        pins.P1.digitalWrite(true);
-        pins.P2.digitalWrite(false);
-        pins.P3.digitalWrite(false);
-        pins.P4.digitalWrite(true);
+        pin1.digitalWrite(false);
+        pin2.digitalWrite(false);
+        pin3.digitalWrite(true);
+        pin4.digitalWrite(true);
+
+        control.waitMicros(10000);
+
+        pin1.digitalWrite(true);
+        pin2.digitalWrite(false);
+        pin3.digitalWrite(false);
+        pin4.digitalWrite(true);
 
         control.waitMicros(10000);
 
@@ -218,7 +218,7 @@ namespace iscmons {
     }
 
     /**
-    * button
+    * Button
     */
 
     //% blockId="ISCMONS_button" block="button on %pin is pressed"
@@ -227,6 +227,14 @@ namespace iscmons {
     //% group="Button"  
     export function button_is_pressed(pin: DigitalInOutPin): boolean {
         return pin.digitalRead();
+    }
+
+    //% blockId="ISCMONS_button" block="button on %pin is not pressed"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="Button"  
+    export function button_is_not_pressed(pin: DigitalInOutPin): boolean {
+        return !pin.digitalRead();
     }
 
  

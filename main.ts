@@ -143,7 +143,7 @@ namespace iscmons {
     }  
 
     /**
-    * lego moteur
+    * lego moteur (checked)
     */
 
     //% blockId="ISCMONS_motor1" block="turn forward motor on %pin1 and %pin2"

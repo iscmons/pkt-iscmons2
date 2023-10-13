@@ -238,7 +238,7 @@ namespace iscmons {
     }
 
     /**
-    * Magnet
+    * Magnet (checked)
     */
 
     //% blockId="ISCMONS_magnet" block="turn on the magnet %bool on pin %pin"
@@ -249,6 +249,21 @@ namespace iscmons {
         pin.digitalWrite(bool);
         return;
     }
+
+
+    /**
+    * LED (checked)
+    */
+
+    //% blockId="ISCMONS_led" block="turn on the led %bool on pin %pin"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="LED"  
+    export function led_turn(pin: DigitalInOutPin, bool: boolean): void {
+        pin.digitalWrite(bool);
+        return;
+    }
+
 
 
 

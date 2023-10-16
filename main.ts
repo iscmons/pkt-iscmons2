@@ -24,10 +24,11 @@ namespace iscmons {
     	//return a;
 	}
 
-    /**
-    * BMP180
-    */
-    function getreg(adr: number, reg: number): number {
+    //% blockId="ISCMONS_BMP180R" block="reads I2C %adr reg %reg"
+    //% weight=80 blockGap=8
+    //% parts=BMP180 trackArgs=0
+    //% group="BMP180"  
+    export function getreg(adr: number, reg: number): number {
        pins.i2cWriteNumber(adr, reg, NumberFormat.UInt8BE);
         return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
 

@@ -29,9 +29,8 @@ namespace iscmons {
     //% parts=BMP180 trackArgs=0
     //% group="BMP180"  
     export function getreg(adr: number, reg: number): number {
-       pins.i2cWriteNumber(adr, reg, NumberFormat.UInt8BE);
+        //pins.i2cWriteNumber(adr, reg, NumberFormat.UInt8BE);
         return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
-
     }
 
     //% blockId="ISCMONS_BMP180T" block="reads T in C with BMP180 on I2C %id"

@@ -55,7 +55,7 @@ namespace iscmons {
     * HCSR04
     */
 
-    //% blockId="ISCMONS_HCSR04" block="reads distance in cm with HCSR04 with echo on %echo with trigger on %trig"
+    //% blockId="ISCMONS_HCSR04" block="reads distance in mm with HCSR04 with echo on %echo with trigger on %trig"
     //% weight=80 blockGap=8
     //% parts=HCSR04 trackArgs=0
     //% group="HCSR04"  

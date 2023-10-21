@@ -220,7 +220,7 @@ namespace iscmons {
     }
 
     /**
-    * Button
+    * Button (checked)
     */
 
     //% blockId="ISCMONS_button1" block="button on %pin is pressed"
@@ -240,7 +240,7 @@ namespace iscmons {
     }
 
     /**
-    * Magnet (checked)
+    * Magnet (checket)
     */
 
     //% blockId="ISCMONS_magnet" block="turn on the magnet %bool on pin %pin"

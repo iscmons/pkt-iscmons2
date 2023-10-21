@@ -4,7 +4,8 @@
         "core": "*",
         "rpi-pico": "*",
         "storage": "*",
-        "buttons": "*"
+        "buttons": "*",
+        "bme280": "github:electroniccats/pxt-bme280#v0.1.1"
     },
     "files": [
         ".vscode/settings.json",

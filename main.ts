@@ -24,33 +24,28 @@ namespace iscmons {
     	//return a;
 	}
 
-    //% blockId="ISCMONS_BMP180R" block="reads I2C %adr reg %reg"
+    //% blockId="ISCMONS_BME280T" block="reads T in C with BME280 on I2C %id"
     //% weight=80 blockGap=8
-    //% parts=BMP180 trackArgs=0
-    //% group="BMP180"  
-    export function getreg(adr: number, reg: number): number {
-        //pins.i2cWriteNumber(adr, reg, NumberFormat.UInt8BE);
-        return pins.i2cReadRegister(adr, reg, NumberFormat.UInt8BE)
-        //return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
+    //% parts=BME280 trackArgs=0
+    //% group="BME280"
+    export function BME280_read_temperature(id: number): number {
+        return BME280(id).temperature;
     }
 
-    //% blockId="ISCMONS_BMP180T" block="reads T in C with BMP180 on I2C %id"
+    //% blockId="ISCMONS_BME280P" block="reads p in Pa with BME280 on I2C %id"
     //% weight=80 blockGap=8
-    //% parts=BMP180 trackArgs=0
-    //% group="BMP180"  
-    export function BMP180_read_temperature(id: number): number {
-        let BMP180_data_temperature = (getreg(id, 0xFA) << 12) + (getreg(id, 0xFB) << 4) + (getreg(id,0xFC) >> 4)
-        BMP180_data_temperature = ((BMP180_data_temperature * 5 + 128) >> 8) / 100.
-        return BMP180_data_temperature;
+    //% parts=BME280 trackArgs=0
+    //% group="BME280"
+    export function BME280_read_pressure(id: number): number {
+        return BME280(id).pressure;
     }
 
-    //% blockId="ISCMONS_BMP180P" block="reads p in Pa with BMP180 on I2C %id"
+    //% blockId="ISCMONS_BME280H" block="reads h in percent with BME280 on I2C %id"
     //% weight=80 blockGap=8
-    //% parts=BMP180 trackArgs=0
-    //% group="BMP180"  
-    export function BMP180_read_pressure(id: number): number {
-        let BMP180_data_pressure = (getreg(id, 0xF7) << 12) + (getreg(id, 0xF8) << 4) + (getreg(id,0xF9) >> 4)
-        return BMP180_data_pressure;
+    //% parts=BME280 trackArgs=0
+    //% group="BME280"
+    export function BME280_read_humidity(id: number): number {
+        return BME280(id).pressure;
     }
 
     /**

@@ -82,31 +82,17 @@ namespace iscmons {
     }
 
     /**
-    * SH1106 screen
+    * SSD1306 screen
     */
 
-    //% blockId="ISCMONS_SH1106a" block="SH1106 displays"
+    //% blockId="ISCMONS_SSD1306" block="SH1106 displays %text on I2C %id"
     //% weight=80 blockGap=8
     //% parts=SH1106 trackArgs=0
     //% group="Screen"  
-    export function SH1106_display(): void {
-
-        return;
-    }
-
-    //% blockId="ISCMONS_SH1106b" block="SH1106 changes contrast"
-    //% weight=80 blockGap=8
-    //% parts=SH1106 trackArgs=0
-    //% group="Screen"  
-    export function SH1106_setcontrast(): void {
-        return;
-    }
-
-    //% blockId="ISCMONS_SH1106"c block="SH1106 sets text"
-    //% weight=80 blockGap=8
-    //% parts=SH1106 trackArgs=0
-    //% group="Screen"  
-    export function SH1106_settext(): void {
+    export function SSD1306_settext(id: number, text: string): void {
+        let display = SSD1306_I2C(128, 64, id)
+        display.text(text, 0, 0, 1)
+        display.show()
         return;
     }
 

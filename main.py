@@ -25,29 +25,24 @@ class iscmons:
         print("coucou2 \n")
         # pins.LED.digitalWrite(false);
         control.wait_micros(1000000)
-    # % blockId="ISCMONS_BMP180R" block="reads I2C %adr reg %reg"
+    # % blockId="ISCMONS_BME280T" block="reads T in C with BME280 on I2C %id"
     # % weight=80 blockGap=8
-    # % parts=BMP180 trackArgs=0
-    # % group="BMP180"  
-    # return pins.i2cReadNumber(adr, NumberFormat.UInt8BE);
-    def getreg(adr: number, reg: number):
-        # pins.i2cWriteNumber(adr, reg, NumberFormat.UInt8BE);
-        return pins.i2c_read_register(adr, reg, NumberFormat.UINT8_BE)
-    # % blockId="ISCMONS_BMP180T" block="reads T in C with BMP180 on I2C %id"
+    # % parts=BME280 trackArgs=0
+    # % group="BME280"
+    def BME280_read_temperature(id2: number):
+        return BME280(id2).temperature
+    # % blockId="ISCMONS_BME280P" block="reads p in Pa with BME280 on I2C %id"
     # % weight=80 blockGap=8
-    # % parts=BMP180 trackArgs=0
-    # % group="BMP180"  
-    def BMP180_read_temperature(id2: number):
-        BMP180_data_temperature = (getreg(id2, 0xFA) << 12) + (getreg(id2, 0xFB) << 4) + (getreg(id2, 0xFC) >> 4)
-        BMP180_data_temperature = ((BMP180_data_temperature * 5 + 128) >> 8) / 100.
-        return BMP180_data_temperature
-    # % blockId="ISCMONS_BMP180P" block="reads p in Pa with BMP180 on I2C %id"
+    # % parts=BME280 trackArgs=0
+    # % group="BME280"
+    def BME280_read_pressure(id3: number):
+        return BME280(id3).pressure
+    # % blockId="ISCMONS_BME280H" block="reads h in percent with BME280 on I2C %id"
     # % weight=80 blockGap=8
-    # % parts=BMP180 trackArgs=0
-    # % group="BMP180"  
-    def BMP180_read_pressure(id3: number):
-        BMP180_data_pressure = (getreg(id3, 0xF7) << 12) + (getreg(id3, 0xF8) << 4) + (getreg(id3, 0xF9) >> 4)
-        return BMP180_data_pressure
+    # % parts=BME280 trackArgs=0
+    # % group="BME280"
+    def BME280_read_humidity(id4: number):
+        return BME280(id4).pressure
     """
     
     HCSR04
@@ -81,26 +76,17 @@ class iscmons:
         return
     """
     
-    SH1106 screen
+    SSD1306 screen
     
     """
-    # % blockId="ISCMONS_SH1106a" block="SH1106 displays"
+    # % blockId="ISCMONS_SSD1306" block="SH1106 displays %text on I2C %id"
     # % weight=80 blockGap=8
     # % parts=SH1106 trackArgs=0
     # % group="Screen"  
-    def SH1106_display():
-        return
-    # % blockId="ISCMONS_SH1106b" block="SH1106 changes contrast"
-    # % weight=80 blockGap=8
-    # % parts=SH1106 trackArgs=0
-    # % group="Screen"  
-    def SH1106_setcontrast():
-        return
-    # % blockId="ISCMONS_SH1106"c block="SH1106 sets text"
-    # % weight=80 blockGap=8
-    # % parts=SH1106 trackArgs=0
-    # % group="Screen"  
-    def SH1106_settext():
+    def SSD1306_settext(id5: number, text: str):
+        display = SSD1306_I2C(128, 64, id5)
+        display.text(text, 0, 0, 1)
+        display.show()
         return
     """
     
@@ -111,8 +97,8 @@ class iscmons:
     # % weight=80 blockGap=8
     # % parts=SH1106 trackArgs=0
     # % group="Data logger"  
-    def write_filename(filename: str, text: str):
-        storage.append_line(filename, text)
+    def write_filename(filename: str, text2: str):
+        storage.append_line(filename, text2)
     """
     
     Servo moteur

@@ -252,8 +252,8 @@ namespace iscmons {
     * RADIO 
     */
 
-    //% blockId="ISCMONS_nrf24" block="send %numb with nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
-    //% weight=80 blockGap=8
+    //% blockId="ISCMONS_nrf24s" block="send %numb with nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
+    //% weight=160 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
     export function send_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, numb: number, id: number): boolean {
@@ -261,8 +261,8 @@ namespace iscmons {
         return radio.send_number(numb);
     }
 
-    //% blockId="ISCMONS_nrf24" block="get number from nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
-    //% weight=80 blockGap=8
+    //% blockId="ISCMONS_nrf24r" block="get number from nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
+    //% weight=160 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
     export function get_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, id: number): number {

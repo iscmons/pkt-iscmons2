@@ -256,7 +256,7 @@ namespace iscmons {
     //% weight=160 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
-    export function send_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, numb: number, id: number): boolean {
+    export function send_nrf24_number(numb: number, id: number , pin1: DigitalInOutPin, pin2: DigitalInOutPin): boolean {
         let radio = NRF24(id, pin2, pin1);
         return radio.send_number(numb);
     }
@@ -265,7 +265,7 @@ namespace iscmons {
     //% weight=160 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
-    export function get_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, id: number): number {
+    export function get_nrf24_number(id: number, pin1: DigitalInOutPin, pin2: DigitalInOutPin): number {
         let radio = NRF24(id, pin2, pin1);
         return radio.get_received_number();
     }

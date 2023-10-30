@@ -12,6 +12,7 @@
         "sim.json",
         "figure.svg",
         "README.md",
+        "iscmonslib.ts",
         "main.ts",
         "test.ts",
         "main.py"

@@ -5,7 +5,8 @@
         "rpi-pico": "*",
         "storage": "*",
         "buttons": "*",
-        "bme280": "github:electroniccats/pxt-bme280#v0.1.1"
+        "bme280": "github:electroniccats/pxt-bme280#v0.1.1",
+        "accelerometer": "*"
     },
     "files": [
         ".vscode/settings.json",

@@ -29,7 +29,7 @@ namespace iscmons {
     //% parts=BME280 trackArgs=0
     //% group="BME280"
     export function BME280_read_temperature(id: number): number {
-        return BME280(id).temperature;
+        return bme280.BME280(id).temperature;
     }
 
     //% blockId="ISCMONS_BME280P" block="reads p in Pa with BME280 on I2C %id"
@@ -37,7 +37,7 @@ namespace iscmons {
     //% parts=BME280 trackArgs=0
     //% group="BME280"
     export function BME280_read_pressure(id: number): number {
-        return BME280(id).pressure;
+        return bme280.BME280(id).pressure;
     }
 
     //% blockId="ISCMONS_BME280H" block="reads h in percent with BME280 on I2C %id"
@@ -45,7 +45,7 @@ namespace iscmons {
     //% parts=BME280 trackArgs=0
     //% group="BME280"
     export function BME280_read_humidity(id: number): number {
-        return BME280(id).pressure;
+        return bme280.BME280(id).pressure;
     }
 
     /**
@@ -90,7 +90,7 @@ namespace iscmons {
     //% parts=SH1106 trackArgs=0
     //% group="Screen"  
     export function SSD1306_settext(id: number, text: string): void {
-        let display = SSD1306_I2C(128, 64, id)
+        let display = ssd1306.SSD1306_I2C(128, 64, id)
         display.text(text, 0, 0, 1)
         display.show()
         return;
@@ -258,7 +258,7 @@ namespace iscmons {
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
     export function send_nrf24_number(numb: number, id: number , pin1: DigitalInOutPin, pin2: DigitalInOutPin): boolean {
-        let radio = NRF24(id, pin2, pin1);
+        let radio = nrf24.NRF24(id, pin2, pin1);
         return radio.send_number(numb);
     }
 
@@ -267,7 +267,8 @@ namespace iscmons {
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
     export function get_nrf24_number(id: number, pin1: DigitalInOutPin, pin2: DigitalInOutPin): number {
-        let radio = NRF24(id, pin2, pin1);
+        //let radio = nrf24.NRF24(id, pin2, pin1);
+        let radio = nrf24.NRF24(id, pin2, pin1);
         return radio.get_number();
     }
 

@@ -30,19 +30,19 @@ class iscmons:
     # % parts=BME280 trackArgs=0
     # % group="BME280"
     def BME280_read_temperature(id2: number):
-        return BME280(id2).temperature
+        return bme280.BME280(id2).temperature
     # % blockId="ISCMONS_BME280P" block="reads p in Pa with BME280 on I2C %id"
     # % weight=80 blockGap=8
     # % parts=BME280 trackArgs=0
     # % group="BME280"
     def BME280_read_pressure(id3: number):
-        return BME280(id3).pressure
+        return bme280.BME280(id3).pressure
     # % blockId="ISCMONS_BME280H" block="reads h in percent with BME280 on I2C %id"
     # % weight=80 blockGap=8
     # % parts=BME280 trackArgs=0
     # % group="BME280"
     def BME280_read_humidity(id4: number):
-        return BME280(id4).pressure
+        return bme280.BME280(id4).pressure
     """
     
     HCSR04
@@ -84,7 +84,7 @@ class iscmons:
     # % parts=SH1106 trackArgs=0
     # % group="Screen"  
     def SSD1306_settext(id5: number, text: str):
-        display = SSD1306_I2C(128, 64, id5)
+        display = ssd1306.SSD1306_I2C(128, 64, id5)
         display.text(text, 0, 0, 1)
         display.show()
         return
@@ -224,13 +224,14 @@ class iscmons:
     # % weight=160 blockGap=8
     # % parts=Motor trackArgs=0
     # % group="nrf24"  
-    def send_nrf24_number(pin15: DigitalInOutPin, pin26: DigitalInOutPin, numb: number, id6: number):
-        radio = NRF24(id6, pin26, pin15)
+    def send_nrf24_number(numb: number, id6: number, pin15: DigitalInOutPin, pin26: DigitalInOutPin):
+        radio = nrf24.NRF24(id6, pin26, pin15)
         return radio.send_number(numb)
     # % blockId="ISCMONS_nrf24r" block="get number from nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
     # % weight=160 blockGap=8
     # % parts=Motor trackArgs=0
     # % group="nrf24"  
-    def get_nrf24_number(pin16: DigitalInOutPin, pin27: DigitalInOutPin, id7: number):
-        radio2 = NRF24(id7, pin27, pin16)
-        return radio2.get_received_number()
+    def get_nrf24_number(id7: number, pin16: DigitalInOutPin, pin27: DigitalInOutPin):
+        # let radio = nrf24.NRF24(id, pin2, pin1);
+        radio2 = nrf24.NRF24(id7, pin27, pin16)
+        return radio2.get_number()

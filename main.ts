@@ -174,6 +174,7 @@ namespace iscmons {
         pin3.digitalWrite(false);
         pin4.digitalWrite(false);
 
+
         control.waitMicros(10000);
 
         pin1.digitalWrite(false);
@@ -267,7 +268,7 @@ namespace iscmons {
     //% group="nrf24"  
     export function get_nrf24_number(id: number, pin1: DigitalInOutPin, pin2: DigitalInOutPin): number {
         let radio = NRF24(id, pin2, pin1);
-        return radio.get_received_number();
+        return radio.get_number();
     }
 
 

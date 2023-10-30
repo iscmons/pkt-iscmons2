@@ -215,3 +215,22 @@ class iscmons:
     def led_turn(pin8: DigitalInOutPin, bool4: bool):
         pin8.digital_write(bool4)
         return
+    """
+    
+    RADIO 
+    
+    """
+    # % blockId="ISCMONS_nrf24" block="send %numb with nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
+    # % weight=80 blockGap=8
+    # % parts=Motor trackArgs=0
+    # % group="nrf24"  
+    def send_nrf24_number(pin15: DigitalInOutPin, pin26: DigitalInOutPin, numb: number, id6: number):
+        radio = NRF24(id6, pin26, pin15)
+        return radio.send_number(numb)
+    # % blockId="ISCMONS_nrf24" block="get number from nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
+    # % weight=80 blockGap=8
+    # % parts=Motor trackArgs=0
+    # % group="nrf24"  
+    def get_nrf24_number(pin16: DigitalInOutPin, pin27: DigitalInOutPin, id7: number):
+        radio2 = NRF24(id7, pin27, pin16)
+        return radio2.get_received_number()

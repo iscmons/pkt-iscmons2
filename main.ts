@@ -252,15 +252,23 @@ namespace iscmons {
     * RADIO 
     */
 
-    //% blockId="ISCMONS_nrf24" block="send %text with nfr24 on I2C %id with CE on %pin1 and CSN on %pin2"
+    //% blockId="ISCMONS_nrf24" block="send %numb with nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
     //% weight=80 blockGap=8
     //% parts=Motor trackArgs=0
     //% group="nrf24"  
-    export function nrf24_send_text(pin1: DigitalInOutPin, pin2: DigitalInOutPin, text: string, id: number): boolean {
-        let radio = nrf24(SPI(id), pin2, pin1);
-        return radio.send_message(text);
+    export function send_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, numb: number, id: number): boolean {
+        let radio = NRF24(id, pin2, pin1);
+        return radio.send_number(numb);
     }
 
+    //% blockId="ISCMONS_nrf24" block="get number from nfr24 on SPI %id with CE on %pin1 and CSN on %pin2"
+    //% weight=80 blockGap=8
+    //% parts=Motor trackArgs=0
+    //% group="nrf24"  
+    export function get_nrf24_number(pin1: DigitalInOutPin, pin2: DigitalInOutPin, id: number): number {
+        let radio = NRF24(id, pin2, pin1);
+        return radio.get_received_number();
+    }
 
 
 

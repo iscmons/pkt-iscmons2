@@ -12,16 +12,10 @@ namespace iscmons {
     //% weight=80 blockGap=8
     //% parts=TMP36 trackArgs=0
     //% group="TMP36"  
-    export function TMP36_read_celsius(pin:AnalogInPin): void {
+    export function TMP36_read_celsius(pin:AnalogInPin): number {
 		let TMP36_voltage = pin.analogRead();
 		let TMP36_temp = 50*TMP36_voltage + 20;
-        console.log("coucou \n")
-        //pins.LED.digitalWrite(true);
-        control.waitMicros(1000000);
-        console.log("coucou2 \n");
-        //pins.LED.digitalWrite(false);
-        control.waitMicros(1000000);
-    	//return a;
+    	return TMP36_temp;
 	}
 
     //% blockId="ISCMONS_BME280T" block="reads T in C with BME280 on I2C %id"

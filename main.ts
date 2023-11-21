@@ -26,6 +26,15 @@ namespace iscmons {
         return pin.analogRead();
     }
 
+    //% blockId="ISCMONS_MOISTURE" block="reads moisture in C on %pin with AZ sensor"
+    //% weight=80 blockGap=8
+    //% parts=MOISTURE trackArgs=0
+    //% group="MOISTURE"  
+    export function Moisture_read(pin: AnalogInPin): number {
+        return pin.analogRead();
+    }
+
+
 
     //% blockId="ISCMONS_BME280T" block="reads T in C with BME280 on I2C %id"
     //% weight=80 blockGap=8

@@ -18,6 +18,15 @@ namespace iscmons {
     	return TMP36_temp;
 	}
 
+    //% blockId="ISCMONS_MQ2" block="reads gaz on %pin with MQ2"
+    //% weight=80 blockGap=8
+    //% parts=MQ2 trackArgs=0
+    //% group="MQ2"  
+    export function MQ2_read(pin: AnalogInPin): number {
+        return pin.analogRead();
+    }
+
+
     //% blockId="ISCMONS_BME280T" block="reads T in C with BME280 on I2C %id"
     //% weight=80 blockGap=8
     //% parts=BME280 trackArgs=0
